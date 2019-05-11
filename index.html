@@ -77,6 +77,7 @@
 							<option>Please choose</option>
 							<option>Hazard or Vulnerability</option>
 							<option>Assets and Controls</option>
+							<option>Individual</option>
 						</select>
 						<div class="dropDownSelect2"></div>
 					</div>
@@ -85,7 +86,7 @@
 				<div class="w-full dis-none js-show-service">
 					<div class="wrap-contact100-form-radio">
 						<span class="label-input100">What item do you wish to add?</span>
-
+						
 						<div class="contact100-form-radio m-t-15">
 							<input class="input-radio100" id="radio1" type="radio" name="type-product" value="pool" checked="checked">
 							<label class="label-radio100" for="radio1">
@@ -170,6 +171,84 @@
 					</div>
 				</div>
 
+				<div class="w-full dis-none js-show-individual">
+					<div class="wrap-contact100-form-radio">
+						<span class="label-input100">Tick the items you have to assist in emergencies</span>
+						
+						<div class="contact100-form-radio m-t-15">
+							<input class="input-radio100" id="radio10" type="checkbox" name="type-product" value="pool">
+							<label class="label-radio100" for="radio10">
+								Pool
+							</label>
+						</div>
+
+						<div class="contact100-form-radio">
+							<input class="input-radio100" id="checkbox11" type="checkbox" name="type-product" value="dam">
+							<label class="label-radio100" for="checkbox11">
+								Generator
+							</label>
+						</div>
+
+						<div class="contact100-form-radio">
+							<input class="input-radio100" id="checkbox12" type="checkbox" name="type-product" value="shelter">
+							<label class="label-radio100" for="checkbox12">
+								Bunker
+							</label>
+						</div>
+					</div>
+
+					<div class="wrap-contact100-form-radio">
+						<span class="label-input100">Tick the languages you speak</span>
+
+						<div class="contact100-form-radio">
+							<input class="input-radio100" id="checkbox40" type="checkbox" name="type-product" value="bushfire">
+							<label class="label-radio100" for="checkbox40">
+								English
+							</label>
+						</div>
+
+						<div class="contact100-form-checkbox">
+							<input class="input-radio100" id="checkbox41" type="checkbox" name="type-product" value="dam">
+							<label class="label-radio100" for="checkbox41">
+								Chinese
+							</label>
+						</div>
+
+						<div class="contact100-form-checkbox">
+							<input class="input-radio100" id="checkbox42" type="checkbox" name="type-product" value="shelter">
+							<label class="label-radio100" for="checkbox42">
+								Spanish
+							</label>
+						</div>
+					</div>
+
+					<div class="wrap-contact100-form-radio">
+							<span class="label-input100">Tick the hazards in your area</span>
+	
+							<div class="contact100-form-radio">
+								<input class="input-radio100" id="checkbox20" type="checkbox" name="type-product" value="bushfire">
+								<label class="label-radio100" for="checkbox20">
+									Bushland
+								</label>
+							</div>
+	
+							<div class="contact100-form-checkbox">
+								<input class="input-radio100" id="checkbox21" type="checkbox" name="type-product" value="dam">
+								<label class="label-radio100" for="checkbox21">
+									Fuel Storage
+								</label>
+							</div>
+	
+							<div class="contact100-form-checkbox">
+								<input class="input-radio100" id="checkbox23" type="checkbox" name="type-product" value="shelter">
+								<label class="label-radio100" for="checkbox23">
+										Ammunitions
+								</label>
+							</div>
+						</div>
+						<br></br>
+				</div>
+
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
 					<span class="label-input100">Any other comments</span>
 					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
@@ -224,9 +303,19 @@
 					{
 						$('.js-show-details').slideDown();
 					}
-					else 
+					else if($(this).val() == "Individual")
 					{
+						$('.js-show-service').slideUp();
+						$('.js-show-individual').slideDown();
+					}
+					else if($(this).val() == "Hazard or Vulnerability")
+					{
+						$('.js-show-individual').slideUp();
 						$('.js-show-service').slideDown();
+					}
+					else
+					{
+
 					}
 				});
 			});
